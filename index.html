@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Fix for Chrome extensions / iframe inspectors setting window.fetch when only a getter exists
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var _fetch = originalFetch ? originalFetch.bind(window) : null;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _fetch;
+            },
+            set: function(newFetch) {
+              _fetch = newFetch;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // Fallback to data property if getter/setter fails
+          try {
+            var f = window.fetch;
+            Object.defineProperty(window, 'fetch', {
+              value: f,
+              writable: true,
+              configurable: true,
+              enumerable: true
+            });
+          } catch (ignored) {}
+        }
+      })();
+    </script>
+    <title>Tây Đô Số - Không Gian Học Liệu 3D Giáo Dục Địa Phương Cần Thơ</title>
+    <meta name="description" content="Nền tảng học liệu số 3D tương tác và Trợ lý AI môn Giáo dục địa phương Cần Thơ THCS (Khối 8-9): Sa bàn 3D lịch sử, Thẻ phương ngữ Nam Bộ, Nghệ nhân ảo RAG Bác Ba Lập, Trạm di sản Ninh Kiều và Trợ lý Rubric 4 tiêu chí." />
+    <meta property="og:title" content="Tây Đô Số - Không Gian Học Liệu 3D Giáo Dục Địa Phương Cần Thơ" />
+    <meta property="og:description" content="Nền tảng học liệu số 3D tương tác và Trợ lý AI môn Giáo dục địa phương Cần Thơ THCS khối 8 và 9." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

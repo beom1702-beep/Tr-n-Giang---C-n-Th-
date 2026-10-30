@@ -1,0 +1,6 @@
+{
+  "name": "Tây Đô Số - Không Gian Học Liệu 3D Cần Thơ",
+  "description": "Nền tảng web tương tác không gian học liệu số 3D và Trợ lý AI giáo dục địa phương Cần Thơ cấp THCS (khối 8-9) với sa bàn lịch sử, thẻ phương ngữ, nghệ nhân ảo RAG Bác Ba Lập và trạm di sản Ninh Kiều.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
